@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Cerinia-Variable";
+  src: url("./Variable/Web/WOFF2/CertiniaBodoniVF_W_OpszWght.woff2")
+      format("woff2"),
+    url("./Variable/Web/WOFF2/CertiniaBodoniVF_W_OpszWght.woff2") format("woff"),
+    url("./Variable/Web/WOFF2/CertiniaBodoniVF_W_OpszWght.woff2")
+      format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
