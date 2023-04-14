@@ -232,11 +232,11 @@ header .container .navigation .tabs a:last-child::after {
 .starter-kit .cards .card {
   background: var(--grey4);
 }
-.starter-kit .cards .card article {
+.starter-kit .cards .card a {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 20px 30px;
+  padding: 30px;
   background: var(--grey4);
 }
 .starter-kit .cards .card h3 {
@@ -265,12 +265,12 @@ header .container .navigation .tabs a:last-child::after {
   font-size: 36px;
 }
 .hero-top {
- background: var(--gradient);
- width: 90%;
- height: 250px;
- margin-top: -200px;
- display: grid;
- place-content: center;
+  background: var(--gradient);
+  width: 90%;
+  height: 250px;
+  margin-top: -200px;
+  display: grid;
+  place-content: center;
 }
 .hero-top h2 {
   font-size: 50px;
@@ -880,7 +880,86 @@ select {
   color: var(--white);
 }
 /* End Footer */
+/* Start Faqs Page */
+.faq {
+  padding-top: 0;
+  background: var(--grey3);
+}
+.faq article {
+  padding: 30px;
+  background: var(--grey4);
+}
+.faq h3 {
+  font-family: "Cerinia-Variable";
+  color: var(--black);
+  margin: 0;
+  text-align: left;
+}
+.faq .search-group {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--black);
+  padding: 10px 20px;
+  background: var(--white);
+}
+.faq .search-group input {
+  flex: 1;
+}
+.responsive-table {
+  margin: 30px;
+}
+li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  gap: 40px;
+}
+.table-header {
+  background-color: #95a5a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.col-1 {
+  flex-basis: 25%;
+}
+.col-2 {
+  flex-basis: 25%;
+}
+.col-3 {
+  flex-basis: 50%;
+}
 
+@media all and (max-width: 767px) {
+  .table-header {
+    display: none;
+  }
+  li {
+    display: block;
+  }
+  .col {
+    flex-basis: 100%;
+  }
+  .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .col:before {
+    color: #6c7a89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+}
+/* End Faqs Page */
 /* Responsive */
 @media (min-width: 1500) {
   .container {
