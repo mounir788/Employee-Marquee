@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marquee Brand</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-2.css" />
     <link rel="stylesheet" href="Satoshi/Fonts/WEB/css/satoshi.css" />
     <link rel="stylesheet" href="Certinia Bodoni/certinia.css" />
     <link
@@ -20,41 +20,11 @@
     <!-- Start Header -->
     <header class="section-border">
       <div class="container">
-        <nav>
-          <a href="#">Customer Login</a>
-          <a href="#">Support</a>
-          <a href="#">Contact US</a>
-        </nav>
         <div class="navigation">
           <a href="index.html" class="logo">
             <img src="images/certinia logo.png" alt="logo" />
             <p>formally FinancialForce</p>
           </a>
-          <div class="tabs">
-            <a href="#certinia">Why Certinia</a>
-            <a href="#products">Product & Solutions</a>
-            <a href="#customers">Customers</a>
-            <a href="#about">About</a>
-          </div>
-          <a href="#" class="btn">
-            <span>Get pricing</span>
-            <span><i class="fa-solid fa-right-long"></i></span>
-          </a>
-          <div class="menu">
-            <i class="fa-solid fa-bars" style="color: #000000"></i>
-          </div>
-        </div>
-        <div class="navigation-mobile">
-          <div class="links">
-            <a href="#certinia">Why Certinia</a>
-            <a href="#products">Product & Solutions</a>
-            <a href="#customers">Customers</a>
-            <a href="#about">About</a>
-            <a href="#" class="btn">
-              <span>Get pricing</span>
-              <span><i class="fa-solid fa-right-long"></i></span>
-            </a>
-          </div>
         </div>
       </div>
     </header>
@@ -85,10 +55,38 @@
             ><i class="fa-solid fa-right-long"></i
           ></span>
         </div>
+        <button class="help">
+          <span>Can't find an answer? Submit a question here</span>
+        </button>
+        <div class="pop-up">
+          <form action="">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="question"
+              id="question"
+              placeholder="Ask your question"
+              rows="5"
+              cols="10"
+            ></textarea>
+            <button type="button" class="submit-q">Submit</button>
+          </form>
+        </div>
         <ul class="responsive-table" id="data-table">
           <li class="table-header">
             <div class="col col-1">Question</div>
-            <div class="col col-2">Department</div>
             <div class="col col-3">Answer</div>
           </li>
           <div class="table-body"></div>
@@ -203,7 +201,7 @@
           })
           .then(function () {
             return gapi.client.request({
-              path: "https://sheets.googleapis.com/v4/spreadsheets/1YUIOvCmYX8-hS0Wct8j7VWeDg0wZqAjesbkNgjQRVBM/values/Sheet1!A1:C10",
+              path: "https://sheets.googleapis.com/v4/spreadsheets/1YUIOvCmYX8-hS0Wct8j7VWeDg0wZqAjesbkNgjQRVBM/values/Sheet1",
             });
           })
           .then(
@@ -256,6 +254,17 @@
       });
 
       gapi.load("client", displayData);
+
+      const popUp = document.querySelector(".pop-up");
+      const submitBtn = document.querySelector(".submit-q");
+      const helpBtn = document.querySelector(".help");
+
+      helpBtn.addEventListener("click", () => {
+        popUp.style.display = "grid";
+      })
+      submitBtn.addEventListener("click", () => {
+        popUp.style.display = "none";
+      })
     </script>
   </body>
 </html>
