@@ -23,7 +23,7 @@
         <div class="navigation">
           <a href="index.html" class="logo">
             <img src="images/certinia logo.png" alt="logo" />
-            <p>formally FinancialForce</p>
+            <p>formerly FinancialForce</p>
           </a>
         </div>
       </div>
@@ -33,33 +33,34 @@
       <!-- Start Welcome Section -->
       <section class="welcome section-border">
         <div class="container">
-          <p>Welcome to</p>
-          <h1>Certinia</h1>
+          <h1>Certinia employee FAQ</h1>
         </div>
       </section>
       <!-- End Welcome Section -->
       <!-- Start Faq Section -->
       <section class="faq">
-        <div class="img">
-          <img src="images/faq.png" alt="faq" />
-        </div>
         <article>
-          <h3>FAQ search engine</h3>
+          <div class="search-group">
+            <span class="search-icon"
+              ><i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #000000"
+              ></i
+            ></span>
+            <input type="text" placeholder="Search here " id="search-input" />
+            <span class="submit" id="search-button"
+              ><i class="fa-solid fa-right-long"></i
+            ></span>
+          </div>
+          <button class="help">
+            <span>Can't find an answer? Submit a question here</span>
+          </button>
         </article>
-        <div class="search-group">
-          <span class="search-icon"
-            ><i class="fa-solid fa-magnifying-glass" style="color: #000000"></i
-          ></span>
-          <input type="text" placeholder="Search here " id="search-input" />
-          <span class="submit" id="search-button"
-            ><i class="fa-solid fa-right-long"></i
-          ></span>
-        </div>
-        <button class="help">
-          <span>Can't find an answer? Submit a question here</span>
-        </button>
         <div class="pop-up">
           <form action="">
+            <div class="close" id="#close-form">
+              <i class="fa-solid fa-x" style="color: #ffffff"></i>
+            </div>
             <input
               type="text"
               name="name"
@@ -201,7 +202,7 @@
           })
           .then(function () {
             return gapi.client.request({
-              path: "https://sheets.googleapis.com/v4/spreadsheets/1YUIOvCmYX8-hS0Wct8j7VWeDg0wZqAjesbkNgjQRVBM/values/Sheet1",
+              path: "https://sheets.googleapis.com/v4/spreadsheets/1HRvK-fQOrzqTrVqew1FWPU29sZfd2Jufexwr-viarmo/values/FInal FAQ for brandfolder",
             });
           })
           .then(
@@ -253,18 +254,33 @@
         displayData(searchQuery);
       });
 
+      searchInput.addEventListener("keyup", function (event) {
+        var searchQuery = searchInput.value.trim().toLowerCase();
+        if (event.keyCode === 13) {
+          displayData(searchQuery);
+        }
+        if (searchQuery === "") {
+          gapi.load("client", displayData);
+        }
+      });
+
       gapi.load("client", displayData);
 
       const popUp = document.querySelector(".pop-up");
       const submitBtn = document.querySelector(".submit-q");
       const helpBtn = document.querySelector(".help");
+      const closeBtn = document.getElementById("#close-form");
 
       helpBtn.addEventListener("click", () => {
         popUp.style.display = "grid";
-      })
+      });
+
       submitBtn.addEventListener("click", () => {
         popUp.style.display = "none";
-      })
+      });
+      closeBtn.addEventListener("click", () => {
+        popUp.style.display = "none";
+      });
     </script>
   </body>
 </html>
