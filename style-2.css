@@ -931,61 +931,14 @@ select {
   flex: 1;
 }
 .faq .help {
-  width: 100%;
-  background: none;
-}
-.faq .help span {
-  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 14px;
   transition: 0.3s;
 }
-.faq .help span:hover {
+.faq .help:hover {
   color: var(--blue);
-}
-.pop-up {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: none;
-  place-content: center;
-  top: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-.pop-up form {
-  position: relative;
-  background: var(--grey);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 60px 30px 30px;
-  border-radius: 10px;
-  font-size: 14px;
-}
-.pop-up form .close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--gradient-bg);
-  display: grid;
-  place-content: center;
-  cursor: pointer;
-}
-.pop-up form textarea {
-  grid-column: 1/-1;
-  border: none;
-  padding: 10px;
-  resize: vertical;
-  outline: none;
-}
-.pop-up form .submit-q {
-  grid-column: 1/-1;
-  background: var(--gradient-bg);
-  color: var(--white);
-  font-weight: bold;
-  justify-self: center;
-  cursor: pointer;
 }
 .responsive-table {
   margin: 10px 30px;

@@ -52,39 +52,10 @@
               ><i class="fa-solid fa-right-long"></i
             ></span>
           </div>
-          <button class="help">
-            <span>Can't find an answer? Submit a question here</span>
-          </button>
+          <a href="mailto:covergard@financialforce.com?subject=FAQ" class="help"
+            >Can't find an answer? Submit a question here</a
+          >
         </article>
-        <div class="pop-up">
-          <form action="">
-            <div class="close" id="#close-form">
-              <i class="fa-solid fa-x" style="color: #ffffff"></i>
-            </div>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Your Name"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="question"
-              id="question"
-              placeholder="Ask your question"
-              rows="5"
-              cols="10"
-            ></textarea>
-            <button type="button" class="submit-q">Submit</button>
-          </form>
-        </div>
         <ul class="responsive-table" id="data-table">
           <li class="table-header">
             <div class="col col-1">Question</div>
@@ -265,22 +236,6 @@
       });
 
       gapi.load("client", displayData);
-
-      const popUp = document.querySelector(".pop-up");
-      const submitBtn = document.querySelector(".submit-q");
-      const helpBtn = document.querySelector(".help");
-      const closeBtn = document.getElementById("#close-form");
-
-      helpBtn.addEventListener("click", () => {
-        popUp.style.display = "grid";
-      });
-
-      submitBtn.addEventListener("click", () => {
-        popUp.style.display = "none";
-      });
-      closeBtn.addEventListener("click", () => {
-        popUp.style.display = "none";
-      });
     </script>
   </body>
 </html>
