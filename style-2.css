@@ -25,6 +25,15 @@ a {
   text-decoration: none;
   line-height: 1;
 }
+iframe {
+  width: 100%;
+  height: fit-content;
+  border: none;
+  height: 600px;
+}
+iframe::-webkit-scrollbar {
+  display: none;
+}
 :root {
   --black: #000;
   --gradient: linear-gradient(
